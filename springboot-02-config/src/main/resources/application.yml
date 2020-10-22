@@ -1,0 +1,13 @@
+person:
+  l
+  age: 18
+  boss: NO
+  birth: 2020/10/21
+  maps: {k1: v1,k2: v2}
+  lists:
+    - dog
+    - cat
+    - monkey
+  Dog:
+    name: xiaohei
+    age: 18
