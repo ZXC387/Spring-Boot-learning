@@ -1,8 +1,11 @@
 package com.zxc.springboot.bean;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Email;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.List;
@@ -18,12 +21,23 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "person")
 @Component
 @Data
+@Validated
 public class Person {
+    /**
+     * @Value()
+     *字面量
+     *可以写SpEL，#{}
+     *可以写${}，取出配置文件中的值 （在运行环境变量里面的值）
+     */
+   // @Email
+    //@Value("${person.last-name}")
     private String lastName;
+    @Value("#{11+4}")
     private Integer age;
+    @Value("true")
     private Boolean boss;
     private Date birth;
-
+    //@Value("person.maps")   这是错误的，@Value注解不支持复杂类型封装
     private Map<String,Object> maps;
     private List<Object> lists;
 
