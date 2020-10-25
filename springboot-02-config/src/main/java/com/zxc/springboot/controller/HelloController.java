@@ -1,6 +1,5 @@
 package com.zxc.springboot.controller;
 
-import com.zxc.springboot.bean.Person;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
