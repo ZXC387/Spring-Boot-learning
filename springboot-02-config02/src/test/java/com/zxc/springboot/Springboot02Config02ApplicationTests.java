@@ -1,13 +1,13 @@
 package com.zxc.springboot;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Springboot02Config02ApplicationTests {
+public class Springboot02Config02ApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }
