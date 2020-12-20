@@ -15,9 +15,10 @@ public class HelloController {
 
     @Value("${person.last-name}")//支持松散语法
     private String userName;
+
     @RequestMapping("/hello")
-    public String sayHello(){
-        return "Hello"+userName;
+    public String sayHello() {
+        return "Hello" + userName;
     }
 
 }
