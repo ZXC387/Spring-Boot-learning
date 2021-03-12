@@ -5,22 +5,48 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.4.RELEASE</version>
+        <version>1.5.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zxc</groupId>
-    <artifactId>springboot-02-config</artifactId>
+    <artifactId>spring-boot-04-web-restfulcrud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springBoot-02-config</name>
+    <name>spring-boot-04-web-restfulcrud</name>
     <description>Demo project for Spring Boot</description>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--切换thymeleaf版本-->
+        <thymeleaf.version> 3.0.2.RELEASE </thymeleaf.version>
+        <thymeleaf-layout-dialect.version> 2.1.1 </thymeleaf-layout-dialect.version>
+
+        <!-- 布局功能的支持程序  thymeleaf3主程序  layout2以上版本 -->
+    </properties>
 
     <dependencies>
+        <!--引入jquery webjar-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!--引入bootstrap webjar-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <!--引入thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--导入配置文件处理器依赖,写配置文件时有提示功能-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -36,11 +62,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>6.0.14.Final</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -48,6 +69,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
